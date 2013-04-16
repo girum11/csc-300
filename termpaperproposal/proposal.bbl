@@ -1,0 +1,71 @@
+\begin{thebibliography}{1}
+\providecommand{\url}[1]{#1}
+\csname url@rmstyle\endcsname
+\providecommand{\newblock}{\relax}
+\providecommand{\bibinfo}[2]{#2}
+\providecommand\BIBentrySTDinterwordspacing{\spaceskip=0pt\relax}
+\providecommand\BIBentryALTinterwordstretchfactor{4}
+\providecommand\BIBentryALTinterwordspacing{\spaceskip=\fontdimen2\font plus
+\BIBentryALTinterwordstretchfactor\fontdimen3\font minus
+  \fontdimen4\font\relax}
+\providecommand\BIBforeignlanguage[2]{{%
+\expandafter\ifx\csname l@#1\endcsname\relax
+\typeout{** WARNING: IEEEtran.bst: No hyphenation pattern has been}%
+\typeout{** loaded for the language `#1'. Using the pattern for}%
+\typeout{** the default language instead.}%
+\else
+\language=\csname l@#1\endcsname
+\fi
+#2}}
+
+\bibitem{firesheep-source}
+\BIBentryALTinterwordspacing
+E.~Butler, ``Firesheep source code (github).'' [Online]. Available:
+  \url{https://github.com/codebutler/firesheep/wiki/Handlers}
+\BIBentrySTDinterwordspacing
+ \begin{quotation}\noindent Source code and documentation for Firesheep
+  \end{quotation}
+
+\bibitem{eric-butler}
+\BIBentryALTinterwordspacing
+------, ``Firesheep,'' October 2010. [Online]. Available:
+  \url{http://codebutler.com/firesheep/?c=1}
+\BIBentrySTDinterwordspacing
+ \begin{quotation}\noindent Eric Butler's personal blog post detailing
+  Firesheep. \end{quotation}
+
+\bibitem{butler-fallout}
+\BIBentryALTinterwordspacing
+------, ``Firesheep, three weeks later: Fallout,'' November 2010. [Online].
+  Available: \url{http://codebutler.com/firesheep-three-weeks-later-fallout/}
+\BIBentrySTDinterwordspacing
+ \begin{quotation}\noindent Eric Butler's personal blog post detailing the
+  fallout of Firesheep \end{quotation}
+
+\bibitem{se-code}
+\BIBentryALTinterwordspacing
+A.~for Computing~Machinery, ``Software engineering code of ethics and
+  professional practice.'' [Online]. Available:
+  \url{http://www.acm.org/about/se-code}
+\BIBentrySTDinterwordspacing
+ \begin{quotation}\noindent The ACM Code of Ethics that this paper uses to
+  define 'ethics' \end{quotation}
+
+\bibitem{security-now}
+\BIBentryALTinterwordspacing
+S.~Gibson, ``Security now! episode 272 (transcript),'' October 2010. [Online].
+  Available: \url{http://www.grc.com/sn/sn-272.htm}
+\BIBentrySTDinterwordspacing
+ \begin{quotation}\noindent Transcript of a podcast in which Leo Laporte and
+  Steve Gibson discuss Firesheep. \end{quotation}
+
+\bibitem{disconnect-blog}
+\BIBentryALTinterwordspacing
+B.~Kennish, ``Widgetjacking: Why more social widgets mean less secure wi-fi,''
+  November 2011. [Online]. Available:
+  \url{https://blog.disconnect.me/widgetjacking}
+\BIBentrySTDinterwordspacing
+ \begin{quotation}\noindent A blog discussing "life after Firesheep"
+  \end{quotation}
+
+\end{thebibliography}
