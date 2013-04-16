@@ -28,3 +28,8 @@ version than vogon if it cannot compile on vogon.
 
 Before submitting your examples, please take a moment to add a header comment
 (like the ones I've added) and any other notes that you think would be helpful.
+=======
+csc-300
+=======
+
+CSC 300 Term Paper
