@@ -27,58 +27,120 @@ Dr. Clark Turner \vspace{10pt} \\
 
 \vfill  %in combination with \newpage this forces the abstract to the bottom of the page
 \begin{abstract}
-Firesheep is an extension for the Firefox web browser that wraps session hijacking logic in a simple GUI. Created by Eric Butler and Ian Gallagher, Firesheep's motivation was described by its creators: ``We're bringing up this tired issue to remind people of the risks they face, especially when on open WiFi networks, and to remind companies that they have a responsibility to protect their users. To drive this point home, we are releasing an open source tool at ToorCon 12 which shows you a `buddy list' of people's online accounts being used around you, and lets you simply double-click to hijack them'' \cite{security-now}.
+Firesheep is an extension for the Firefox web browser that wraps Wireshark (an existing piece of session hijacking and packet sniffing software \cite{wireshark}) in a simple GUI \cite{firesheep-source}. Created by Eric Butler and Ian Gallagher, Firesheep's motivation was described by its creators: ``We're bringing up this tired issue to remind people of the risks they face, especially when on open WiFi networks, and to remind companies that they have a responsibility to protect their users. To drive this point home, we are releasing an open source tool at ToorCon 12 which shows you a `buddy list' of people's online accounts being used around you, and lets you simply double-click to hijack them'' \cite{security-now}.
 
-Was it ethical to release this software? The Association for Computer Machinery defines a Code of Ethics stating that ``software engineers shall commit themselves to making the analysis, specification, design, development, testing and maintenance of software a beneficial and respected profession'' \cite{se-code}. Firesheep is built specifically to allow untrained users to hijack browser sessions from unsuspecting victims \cite{eric-butler}, which directly contradicts Section 1.03 of the Code of Ethics: ``1.03. Approve software only if they have a well-founded belief that it is safe, meets specifications, passes appropriate tests, and does not diminish quality of life, diminish privacy or harm the environment. The ultimate effect of the work should be to the public good.'' \cite{se-code}. However, Firesheep's release prompted many large software companies to quickly fix the security holes that Firesheep was designed to expose \cite{disconnect-blog}; the companies were slow to fix it before Firesheep's release \cite{disconnect-blog}. Firesheep was detrimental to public welfare in the short term, yet its long term benefit to the community outweighed its initial detriment enough to make it an ethical product.
+Was it ethical to release this software? Eric stated in his release of Firesheep that ``It's extremely common for websites to protect your password by encrypting the initial login, but surprisingly uncommon for websites to encrypt everything else...This is a widely known problem that has been talked about to death, yet very popular websites continue to fail at protecting their users'' \cite{eric-butler}. Yet the use of wire sheep may be illegal in the US and beyond \cite{illegal-to-use-firesheep}. I will show that Firesheep was indeed ethical to release due to SE Code 1.04, the requirement for Software Engineers to fully disclose any potential software danger to the public \cite{se-code}.
+
 \end{abstract}
 \thispagestyle{empty} %remove page number from title page, but still keep it as pg #1
 \newpage
+
 
 %%%%%%%%%%%%%%%%%%%%
 %%% Known Facts  %%%
 %%%%%%%%%%%%%%%%%%%%
 \section{Facts}
+% Known facts that are not disputed that lead to your question. Do not judge these facts or make anything like an argument for an answer in here. Just note the facts that give us the general background and end them with the facts leading to the controversy you are interested in. The reader should naturally be asking the question you'll be asking by that point in your paper. In general, attach your facts to a specific case, the more specific and detailed the facts, the better for your analysis. Cite all facts to their sources. \cite{handout}
+
+\subsection{Description of Firesheep}
 Eric Butler describes in his blog: ``When logging into a website you usually start by submitting your username and password. The server then checks to see if an account matching this information exists and if so, replies back to you with a `cookie' which is used by your browser for all subsequent requests \cite{eric-butler}.
 
 ``It's extremely common for websites to protect your password by encrypting the initial login, but surprisingly uncommon for websites to encrypt everything else. This leaves the cookie (and the user) vulnerable. HTTP session hijacking (sometimes called ``sidejacking'') is when an attacker gets a hold of a user's cookie, allowing them to do anything the user can do on a particular website. On an open wireless network, cookies are basically shouted through the air, making these attacks extremely easy'' \cite{eric-butler}. Butler continues with his description of the ``problem that has been talked about to death'' and how it remains to be solved \cite{eric-butler}. 
 
+Qualified hackers were already able to perform session hijacking like this well before the release of Firesheep, using the program `Wireshark' (which Firesheep is built on top of). \cite{wireshark}.
+
 At its time of release, Firesheep worked on the following sites: Amazon, Basecamp, bit.ly, Enom, Facebook, FourSquare, Github, Google, Hacker News, Harvest, The New York Times, Pivotal Tracker, Twitter, ToorCon: San Diego, Evernote, Dropbox, Windows Live, Cisco, Slicehost, Gowalla, Flickr and Yahoo \cite{firesheep-source}.
 
 
+\subsection{Definition of the ACM Code of Ethics}
+The Association for Computer Machinery defines a Code of Ethics stating that ``software engineers shall commit themselves to making the analysis, specification, design, development, testing and maintenance of software a beneficial and respected profession'' \cite{se-code}. 
 
+\subsection{Firesheep's adherence to said Code of Ethics}
+Firesheep's release was intended to allow the general public perform session hijacking on suspecting or non-suspecting victims, with consequences that may not be ``beneficial and respected.'' However, Firesheep's release prompted many large software companies to quickly fix the security holes that Firesheep was designed to expose \cite{disconnect-blog}; the companies were slow to fix it before Firesheep's release \cite{disconnect-blog}. From a strictly objective point of view, Firesheep was detrimental to public welfare in the short term and was beneficial to public welfare in the long term.
 
-
-Known facts that are not disputed that lead to your question. Do not judge these facts or make anything like an argument for an answer in here. Just note the facts that give us the general background and end them with the facts leading to the controversy you are interested in. The reader should naturally be asking the question you'll be asking by that point in your paper. In general, attach your facts to a specific case, the more specific and detailed the facts, the better for your analysis. Cite all facts to their sources. \cite{handout}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Research Question %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Research Question}
-Your research question -- this is the ethical question you are interested in answering. It should be one simple sentence and lead to a yes/no answer. It needs to be very narrowly focused, specific, and not abstract at all. It's best to question a detailed case in the general area of your interest. Open ended questions are very hard to answer. \cite{handout}
+% Your research question -- this is the ethical question you are interested in answering. It should be one simple sentence and lead to a yes/no answer. It needs to be very narrowly focused, specific, and not abstract at all. It's best to question a detailed case in the general area of your interest. Open ended questions are very hard to answer. \cite{handout}
+
+Was it ethical to release Firesheep to the public?
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Extant Arguments from External Sources %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Extant arguments}
-Extant arguments -- this is where you gather the arguments made by others interested in the same question. No judgments, just repeat their arguments for the answer in the best possible light from the arguer's perspective. Cover both sides of your question (the ``yes'' side and the ``no'' side) to get a complete picture of how others are thinking about it. Do not include any general ethical principles in here unless they are explicitly written up in the arguments. Cite all arguments to their sources. \cite{handout}
+% Extant arguments -- this is where you gather the arguments made by others interested in the same question. No judgments, just repeat their arguments for the answer in the best possible light from the arguer's perspective. Cover both sides of your question (the ``yes'' side and the ``no'' side) to get a complete picture of how others are thinking about it. Do not include any general ethical principles in here unless they are explicitly written up in the arguments. Cite all arguments to their sources. 
+
+\subsection{In Favor of Firesheep's release}
+\subsubsection{Eric Butler's argument}
+Eric Butler himself argues in favor of the release of Firesheep. In his article ``Firesheep, a week later: Ethics and Legality'', Butler states outright that ``it is nobody's business telling you what software you can or cannot run on your own computer'' \cite{butler-week-later}. He defends by saying that code is a form of free speech, and that we have a Constitutional right to free speech \cite{butler-week-later}.
+
+\subsubsection{Mozilla's support of Firesheep}
+Mozilla themselves support Firesheep. Firefox (the browser for which Firesheep is an extension for) features an internal blacklist of extensions that it does not allow to work \cite{mozilla-blocklist}. Mozilla, the creators of Firefox, specifically decided not to blacklist Firesheep \cite{no-kill-switch}. Mike Beltzner, director of Firefox, praised its release: ``[Firesheep] demonstrates a security weakness in a number of popular websites, but does not exploit any vulnerability in Firefox or other Web browsers'' \cite{no-kill-switch}.
+
+
+\subsection{Against Firesheep's release}
+\subsubsection{Real-world use of Firesheep may be illegal}
+The actual use of Firesheep, however, may be illegal \cite{illegal-to-use-firesheep}. Federal wiretapping laws state that it's not illegal ``to intercept or access an electronic communication made through an electronic communication system that is configured so that such electronic communication is readily accessible to the general public'' \cite{illegal-to-use-firesheep}. However, Jonathan Gordan, partner at Los Angeles law firm Alson and Bird, states that ``when people are accessing their social network [account], they have an expectation that whatever they're doing is governed by the privacy settings in that network'', and that a open Wi-fi network does not qualify as ``readily accessible to the general public'' \cite{illegal-to-use-firesheep}.
+
+\subsubsection{Firesheep contradicts parts of the ACM Code of Ethics}
+Firesheep is built specifically to allow untrained users to hijack browser sessions from unsuspecting victims \cite{eric-butler}, which directly contradicts Section 1.03 of the Code of Ethics: ``1.03. Approve software only if they have a well-founded belief that it is safe, meets specifications, passes appropriate tests, and does not diminish quality of life, diminish privacy or harm the environment'' \cite{se-code}. 
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Analytic principles %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Applicable analytic principles}
-Applicable analytic principles -- give a list of the basic ethical (and other) principles you'll rely on to come up with your analysis, include several explicit principles from the SE Code of Ethics, deontological principles, utilitarianism (rule-utilitarianism) as well as others that will aid you. Indicate generally how they apply to your specific case. Cite any additional facts or principles you'll need. Cite to sources for the principles you list. \cite{handout}
+% Applicable analytic principles -- give a list of the basic ethical (and other) principles you'll rely on to come up with your analysis, include several explicit principles from the SE Code of Ethics, deontological principles, utilitarianism (rule-utilitarianism) as well as others that will aid you. Indicate generally how they apply to your specific case. Cite any additional facts or principles you'll need. Cite to sources for the principles you list. \cite{handout}
+I will use SE principles 6.06, 1.04, 1.03, and 1.08 to show that Eric Butler was ethical to release Firesheep \cite{se-code}.
+
+\subsection{SE Principle 6.06}
+\subsubsection{Definition}
+``6.06. Obey all laws governing their work, unless, in exceptional circumstances, such compliance is inconsistent with the public interest'' \cite{se-code}.
+\subsubsection{Pertinence}
+Laws in the US, UK and beyond generally outlaw the use of Firesheep for most of its use cases \cite{illegal-to-use-firesheep} \cite{illegal-to-use-firesheep-uk}. However, Firesheep's release managed to force software vendors to quickly fix the security holes that Firesheep was designed to expose \cite{disconnect-blog}. These software vendors were notoriously slow to fix the security hole up until the release of Firesheep \cite{disconnect-blog}. 
+
+\subsection{SE Principle 1.04}
+\subsubsection{Definition}
+``1.04. Disclose to appropriate persons or authorities any actual or potential danger to the user, the public, or the environment, that they reasonably believe to be associated with software or related documents'' \cite{se-code}.
+\subsubsection{Pertinence}
+Firesheep was released specifically with the intent to educate the general public of the security holes many major websites had concerning non-authenticated HTTP sessions \cite{eric-butler}.
+
+\subsection{SE Principle 1.03}
+\subsubsection{Definition}
+``1.03. Approve software only if they have a well-founded belief that it is safe, meets specifications, passes appropriate tests, and does not diminish quality of life, diminish privacy or harm the environment. The ultimate effect of the work should be to the public good'' \cite{se-code}.
+\subsubsection{Pertinence}
+Firesheep's allows otherwise unqualified hackers to perform session hijacking on unsuspecting victims \cite{eric-butler}. Increasing the size of the pool of people qualified to perform a crime clearly diminishes privacy and quality of life in the short term.
+
+\subsection{SE Principle 1.08}
+\subsubsection{Definition}
+``1.08. Be encouraged to volunteer professional skills to good causes and contribute to public education concerning the discipline'' \cite{se-code}.
+\subsubsection{Pertinence}
+Firesheep was developed in Eric Butler's free time, released in the hope that a simpler UI would give greater exposure to a long-known security vulnerability in several major websites \cite{firesheep-huge-hit}. It succeeded in this purpose \cite{firesheep-day-later}.
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Abstract your Expected Analysis %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Abstract of Expected Analysis}
-Give a short abstract of the basics you expect to analyze and present in your paper. Divide it into sections that make sense for your work.
+% Give a short abstract of the basics you expect to analyze and present in your paper. Divide it into sections that make sense for your work.
+% Note that the SE Code should be the center of your ethical analysis (and remember that it includes both deontological and utilitarian [and more] principles you can utilize). Estimate where you'll end up for your answer (you can change your mind in the final paper!). Keep referencing sources for any additional facts, quotes, or other information you might use here. \cite{handout}
 
-One way would be to: a) start with deontological perspectives as a section where you analyze those arguments based on the inherent ethics of the act itself rather than the results or trade-offs; then, b) use a utilitarian perspective and list the appropriate analyses of the trade-offs and stakeholders to define the most desired results and how to get them. Be explicit about the trade-offs (what value is balanced against what other value, which stakeholders win, which stakeholders lose...) What is the ``utility'' in ``utilitarian'' in your case -- what value do you want to advance the most (derived from the general utilitarian ``happiness'')? How do you maximize (or optimize) it?
+\subsection{A Deontological Perspective}
+% a) start with deontological perspectives as a section where you analyze those arguments based on the inherent ethics of the act itself rather than the results or trade-offs;
 
-Note that the SE Code should be the center of your ethical analysis (and remember that it includes both deontological and utilitarian [and more] principles you can utilize). Estimate where you'll end up for your answer (you can change your mind in the final paper!). Keep referencing sources for any additional facts, quotes, or other information you might use here. \cite{handout}
 
-%cite all the references from the bibtex you haven't explicitly cited
+\subsection{A Utilitarian Perspective}
+% then, b) use a utilitarian perspective and list the appropriate analyses of the trade-offs and stakeholders to define the most desired results and how to get them. Be explicit about the trade-offs (what value is balanced against what other value, which stakeholders win, which stakeholders lose...) What is the ``utility'' in ``utilitarian'' in your case -- what value do you want to advance the most (derived from the general utilitarian ``happiness'')? How do you maximize (or optimize) it?
+
+
+
+
 \nocite{*}
 
 \bibliographystyle{IEEEannot}

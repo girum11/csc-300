@@ -8,59 +8,71 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: proposal.bib
+Warning--entry type for "firesheep-huge-hit" isn't style-file defined
+--line 32 of file proposal.bib
 Warning--entry type for "se-code" isn't style-file defined
---line 40 of file proposal.bib
-Warning--I didn't find a database entry for "handout"
+--line 108 of file proposal.bib
 -- IEEEtranS.bst version 1.11 (2003/04/02) by Michael Shell.
 -- http://www.ctan.org/tex-archive/macros/latex/contrib/supported/IEEEtran/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
 ** Sorting version - not for use with work to be submitted to the IEEE.
+Warning--to sort, need author or key in wireshark
+Warning--to sort, need author or key in mozilla-blocklist
+Warning--empty author in wireshark
+Warning--empty note in wireshark
+Warning--empty author in mozilla-blocklist
+Warning--empty note in mozilla-blocklist
 Warning--empty note in firesheep-source
 Warning--empty note in eric-butler
+Warning--empty note in firesheep-day-later
+Warning--empty note in butler-week-later
 Warning--empty note in butler-fallout
 Warning--empty note in security-now
+Warning--empty note in illegal-to-use-firesheep
+Warning--empty note in no-kill-switch
 Warning--empty note in disconnect-blog
+Warning--empty note in illegal-to-use-firesheep-uk
 
 Done.
-You've used 6 entries,
+You've used 14 entries,
             4480 wiz_defined-function locations,
-            909 strings with 8875 characters,
-and the built_in function-call counts, 2478 in all, are:
-= -- 239
-> -- 42
+            943 strings with 10393 characters,
+and the built_in function-call counts, 5517 in all, are:
+= -- 545
+> -- 86
 < -- 0
-+ -- 18
-- -- 12
-* -- 150
-:= -- 532
-add.period$ -- 12
-call.type$ -- 6
-change.case$ -- 24
++ -- 38
+- -- 24
+* -- 333
+:= -- 1166
+add.period$ -- 28
+call.type$ -- 14
+change.case$ -- 54
 chr.to.int$ -- 0
-cite$ -- 11
-duplicate$ -- 139
-empty$ -- 168
-format.name$ -- 12
-if$ -- 468
+cite$ -- 30
+duplicate$ -- 318
+empty$ -- 385
+format.name$ -- 24
+if$ -- 1063
 int.to.chr$ -- 0
-int.to.str$ -- 6
-missing$ -- 27
-newline$ -- 56
-num.names$ -- 12
-pop$ -- 60
+int.to.str$ -- 14
+missing$ -- 60
+newline$ -- 104
+num.names$ -- 24
+pop$ -- 130
 preamble$ -- 1
-purify$ -- 18
+purify$ -- 40
 quote$ -- 2
-skip$ -- 171
+skip$ -- 391
 stack$ -- 0
-substring$ -- 36
-swap$ -- 89
+substring$ -- 84
+swap$ -- 204
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 6
-type$ -- 54
-warning$ -- 5
-while$ -- 12
-width$ -- 7
-write$ -- 83
-(There were 7 warnings)
+type$ -- 126
+warning$ -- 16
+while$ -- 24
+width$ -- 16
+write$ -- 167
+(There were 18 warnings)

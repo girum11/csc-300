@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  16 APR 2013 15:22
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  18 APR 2013 15:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -129,51 +129,38 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 [1
 
 {/usr/local/texlive/2012/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-
-LaTeX Warning: Citation `handout' on page 2 undefined on input line 51.
-
-
-LaTeX Warning: Citation `handout' on page 2 undefined on input line 57.
-
-
-LaTeX Warning: Citation `handout' on page 2 undefined on input line 63.
-
 [2]
+Overfull \hbox (3.05295pt too wide) in paragraph at lines 80--81
+\OT1/cmr/m/n/12 Eric But-ler him-self ar-gues in fa-vor of the re-lease of Fire
+sheep. In his ar-ti-cle ``Firesheep,
+ []
 
-LaTeX Warning: Citation `handout' on page 3 undefined on input line 69.
-
-
-LaTeX Warning: Citation `handout' on page 3 undefined on input line 79.
-
-(./proposal.bbl
+[3] [4] (./proposal.bbl
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <12> on input line 24.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 24.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 24.
- [3]) [4] (./proposal.aux)
-
-LaTeX Warning: There were undefined references.
-
- ) 
+ [5] [6]) [7] (./proposal.aux) ) 
 Here is how much of TeX's memory you used:
- 882 strings out of 493488
- 12154 string characters out of 3141326
- 68222 words of memory out of 3000000
- 4234 multiletter control sequences out of 15000+200000
- 9109 words of font info for 32 fonts, out of 3000000 for 9000
+ 891 strings out of 493488
+ 12341 string characters out of 3141326
+ 69251 words of memory out of 3000000
+ 4243 multiletter control sequences out of 15000+200000
+ 9416 words of font info for 33 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
- 23i,7n,21p,1257b,315s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
-></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-</usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></
-usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></us
-r/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on proposal.pdf (4 pages, 82281 bytes).
+ 23i,7n,19p,799b,315s stack positions out of 5000i,500n,10000p,200000b,50000s
+</usr/local/texlive/2012/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmr10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmr12.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmr17.pfb>
+Output written on proposal.pdf (7 pages, 90402 bytes).
 PDF statistics:
- 37 PDF objects out of 1000 (max. 8388607)
- 25 compressed objects within 1 object stream
+ 48 PDF objects out of 1000 (max. 8388607)
+ 33 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

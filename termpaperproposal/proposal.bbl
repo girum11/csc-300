@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 \providecommand{\url}[1]{#1}
 \csname url@rmstyle\endcsname
 \providecommand{\newblock}{\relax}
@@ -18,6 +18,21 @@
 \fi
 #2}}
 
+\bibitem{wireshark}
+\BIBentryALTinterwordspacing
+``About wireshark.'' [Online]. Available:
+  \url{http://www.wireshark.org/about.html}
+\BIBentrySTDinterwordspacing
+ \begin{quotation}\noindent Wireshark official website \end{quotation}
+
+\bibitem{mozilla-blocklist}
+\BIBentryALTinterwordspacing
+``Extensions.blocklist.enabled.'' [Online]. Available:
+  \url{http://kb.mozillazine.org/Extensions.blocklist.enabled}
+\BIBentrySTDinterwordspacing
+ \begin{quotation}\noindent Firefox's own details of how its blacklist works,
+  and what it was for. \end{quotation}
+
 \bibitem{firesheep-source}
 \BIBentryALTinterwordspacing
 E.~Butler, ``Firesheep source code (github).'' [Online]. Available:
@@ -33,6 +48,23 @@ E.~Butler, ``Firesheep source code (github).'' [Online]. Available:
 \BIBentrySTDinterwordspacing
  \begin{quotation}\noindent Eric Butler's personal blog post detailing
   Firesheep. \end{quotation}
+
+\bibitem{firesheep-day-later}
+\BIBentryALTinterwordspacing
+------, ``Firesheep, a day later,'' October 2010. [Online]. Available:
+  \url{http://codebutler.com/firesheep-a-day-later/}
+\BIBentrySTDinterwordspacing
+ \begin{quotation}\noindent Eric Butler's personal blog; his thoughts on
+  Firesheep the day after release \end{quotation}
+
+\bibitem{butler-week-later}
+\BIBentryALTinterwordspacing
+------, ``Firesheep, a week later: Ethics and legality,'' November 2010.
+  [Online]. Available:
+  \url{http://codebutler.com/firesheep-a-week-later-ethics-and-legality/}
+\BIBentrySTDinterwordspacing
+ \begin{quotation}\noindent Eric Butler's personal blog post detailing the
+  ethics and legality of Firesheep \end{quotation}
 
 \bibitem{butler-fallout}
 \BIBentryALTinterwordspacing
@@ -59,6 +91,25 @@ S.~Gibson, ``Security now! episode 272 (transcript),'' October 2010. [Online].
  \begin{quotation}\noindent Transcript of a podcast in which Leo Laporte and
   Steve Gibson discuss Firesheep. \end{quotation}
 
+\bibitem{illegal-to-use-firesheep}
+\BIBentryALTinterwordspacing
+G.~Keizer, ``Is it legal to use firesheep at starbucks?'' November 2010.
+  [Online]. Available:
+  \url{http://www.computerworld.com/s/article/9194159/Is_it_legal_to_use_Firesheep_at_Starbucks_}
+\BIBentrySTDinterwordspacing
+ \begin{quotation}\noindent Article on the legality of Firesheep
+  \end{quotation}
+
+\bibitem{no-kill-switch}
+\BIBentryALTinterwordspacing
+------, ``Mozilla: No 'kill switch' for firesheep add-on,'' October 2010.
+  [Online]. Available:
+  \url{http://www.computerworld.com/s/article/9193420/Mozilla_No_kill_switch_for_Firesheep_add_on?taxonomyId=17&pageNumber=1}
+\BIBentrySTDinterwordspacing
+ \begin{quotation}\noindent Computerworld article detailing that Mozilla either
+  can't or won't disable Firesheep from working in Firefox using Firefox's
+  blacklist mechanism \end{quotation}
+
 \bibitem{disconnect-blog}
 \BIBentryALTinterwordspacing
 B.~Kennish, ``Widgetjacking: Why more social widgets mean less secure wi-fi,''
@@ -66,6 +117,23 @@ B.~Kennish, ``Widgetjacking: Why more social widgets mean less secure wi-fi,''
   \url{https://blog.disconnect.me/widgetjacking}
 \BIBentrySTDinterwordspacing
  \begin{quotation}\noindent A blog discussing "life after Firesheep"
+  \end{quotation}
+
+\bibitem{firesheep-huge-hit}
+\BIBentryALTinterwordspacing
+S.~J. Purewal, ``Firesheep's a huge hit with amateur hackers,'' October 2010.
+  [Online]. Available:
+  \url{http://www.pcworld.com/article/208773/Firesheeps_a_Huge_Hit_with_Amateur_Hackers.html}
+\BIBentrySTDinterwordspacing
+ \begin{quotation}\noindent News post about Firesheep being popular among
+  unqualified hackers \end{quotation}
+
+\bibitem{illegal-to-use-firesheep-uk}
+\BIBentryALTinterwordspacing
+TechnoLlama, ``Is firesheep illegal?'' November 2010. [Online]. Available:
+  \url{http://www.technollama.co.uk/is-firesheep-illegal}
+\BIBentrySTDinterwordspacing
+ \begin{quotation}\noindent UK Article on the legality of Firesheep
   \end{quotation}
 
 \end{thebibliography}
