@@ -10,8 +10,17 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: proposal.bib
 Warning--entry type for "firesheep-huge-hit" isn't style-file defined
 --line 32 of file proposal.bib
+Warning--entry type for "virtue-ethics" isn't style-file defined
+--line 99 of file proposal.bib
+I was expecting a `,' or a `}'---line 102 of file proposal.bib
+ : 
+ : publisher = {The Stanford Encyclopedia of Philosophy},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--entry type for "rule-utilitarianism" isn't style-file defined
+--line 106 of file proposal.bib
 Warning--entry type for "se-code" isn't style-file defined
---line 108 of file proposal.bib
+--line 121 of file proposal.bib
 -- IEEEtranS.bst version 1.11 (2003/04/02) by Michael Shell.
 -- http://www.ctan.org/tex-archive/macros/latex/contrib/supported/IEEEtran/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
@@ -34,45 +43,45 @@ Warning--empty note in disconnect-blog
 Warning--empty note in illegal-to-use-firesheep-uk
 
 Done.
-You've used 14 entries,
+You've used 16 entries,
             4480 wiz_defined-function locations,
-            943 strings with 10393 characters,
-and the built_in function-call counts, 5517 in all, are:
-= -- 545
-> -- 86
+            950 strings with 10570 characters,
+and the built_in function-call counts, 6287 in all, are:
+= -- 605
+> -- 100
 < -- 0
-+ -- 38
-- -- 24
-* -- 333
-:= -- 1166
-add.period$ -- 28
-call.type$ -- 14
-change.case$ -- 54
++ -- 44
+- -- 28
+* -- 355
+:= -- 1290
+add.period$ -- 31
+call.type$ -- 16
+change.case$ -- 62
 chr.to.int$ -- 0
-cite$ -- 30
-duplicate$ -- 318
-empty$ -- 385
-format.name$ -- 24
-if$ -- 1063
+cite$ -- 32
+duplicate$ -- 380
+empty$ -- 463
+format.name$ -- 28
+if$ -- 1225
 int.to.chr$ -- 0
-int.to.str$ -- 14
-missing$ -- 60
-newline$ -- 104
-num.names$ -- 24
-pop$ -- 130
+int.to.str$ -- 16
+missing$ -- 74
+newline$ -- 112
+num.names$ -- 28
+pop$ -- 174
 preamble$ -- 1
-purify$ -- 40
+purify$ -- 46
 quote$ -- 2
-skip$ -- 391
+skip$ -- 456
 stack$ -- 0
-substring$ -- 84
-swap$ -- 204
+substring$ -- 96
+swap$ -- 230
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 6
-type$ -- 126
+type$ -- 144
 warning$ -- 16
-while$ -- 24
-width$ -- 16
-write$ -- 167
-(There were 18 warnings)
+while$ -- 28
+width$ -- 18
+write$ -- 181
+(There was 1 error message)

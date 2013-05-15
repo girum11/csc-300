@@ -3,7 +3,7 @@
 % Dr. Clark Turner
 
 % One Column Format
-\documentclass[12pt]{article}
+\documentclass[12pt,twocolumn]{article}
 
 \usepackage{setspace}
 \usepackage{url}
@@ -14,8 +14,8 @@
 
 
 \begin{document}
-
-\title{\vfill Term Paper Proposal - Firesheep} %\vfill gives us the black space at the top of the page
+\onecolumn
+\title{\vfill Term Paper Short Draft - Firesheep} %\vfill gives us the black space at the top of the page
 \author{
 By Girum Ibssa \vspace{10pt} \\
 CSC 300: Professional Responsibilities  \vspace{10pt} \\
@@ -34,7 +34,7 @@ Was it ethical to release this software? Eric stated in his release of Firesheep
 \end{abstract}
 \thispagestyle{empty} %remove page number from title page, but still keep it as pg #1
 \newpage
-
+\twocolumn
 
 %%%%%%%%%%%%%%%%%%%%
 %%% Known Facts  %%%
@@ -133,17 +133,28 @@ Firesheep was developed in Eric Butler's free time, released in the hope that a 
 
 \subsection{A Deontological Perspective}
 % a) start with deontological perspectives as a section where you analyze those arguments based on the inherent ethics of the act itself rather than the results or trade-offs;
+\subsubsection{`Deontological' Definition}
+Deontological ethics is a normative ethical position that judges the morality of an action based on whether or not the action adheres to existing rules or laws \cite{virtue-ethics}.
+
+\subsubsection{Relevant SE Code Article}
+The article of the SE Code of Ethics that is most pertinent to a Deontological perspective of ethics is Article 6.06: ``6.06. Obey all laws governing their work, unless, in exceptional circumstances, such compliance is inconsistent with the public interest'' \cite{se-code}. The first half of this article is a Deontological perspective into the ethics of software engineering. The use of Firesheep in certain situations, as stated before, is illegal and thus shouldn't be used. 
+
 
 
 \subsection{A Utilitarian Perspective}
 % then, b) use a utilitarian perspective and list the appropriate analyses of the trade-offs and stakeholders to define the most desired results and how to get them. Be explicit about the trade-offs (what value is balanced against what other value, which stakeholders win, which stakeholders lose...) What is the ``utility'' in ``utilitarian'' in your case -- what value do you want to advance the most (derived from the general utilitarian ``happiness'')? How do you maximize (or optimize) it?
+\subsubsection{`Utilitarian' Definition}
+Utilitarian ethics are defined such that ``the rightness or wrongness of a particular action is a function of the correctness of the rule of which it is an instance'' \cite{rule-utilitarianism}.
 
+\subsubsection{Relevant SE Code Article}
+The second half of SE Code Article 6.06 states you should adhere to rules ``unless, in exceptional circumstances, such compliance is inconsistent with the public interest'' \cite{se-code}. The latter part of this article is a Utilitarian perspective on the ethics of software engineering \cite{rule-utilitarianism}. 
 
-
+The length for which session hijacking went as an unsolved problem necessitated the release of Firesheep as an `exceptional circumstance.' Firesheep was thus ethical to release with respect to a Utilitarian perspective on SE ethics (that is, Article 6.06 of the SE Code) \cite{se-code}.
 
 \nocite{*}
 
 \bibliographystyle{IEEEannot}
 
+\onecolumn
 \bibliography{proposal}
 \end{document}

@@ -83,6 +83,11 @@ A.~for Computing~Machinery, ``Software engineering code of ethics and
  \begin{quotation}\noindent The ACM Code of Ethics that this paper uses to
   define 'ethics' \end{quotation}
 
+\bibitem{rule-utilitarianism}
+R.~Garner, ``Moral philosophy: A systematic introduction to normative ethics
+  and meta-ethics.''
+
+
 \bibitem{security-now}
 \BIBentryALTinterwordspacing
 S.~Gibson, ``Security now! episode 272 (transcript),'' October 2010. [Online].
@@ -90,6 +95,10 @@ S.~Gibson, ``Security now! episode 272 (transcript),'' October 2010. [Online].
 \BIBentrySTDinterwordspacing
  \begin{quotation}\noindent Transcript of a podcast in which Leo Laporte and
   Steve Gibson discuss Firesheep. \end{quotation}
+
+\bibitem{virtue-ethics}
+R.~Hursthouse, ``Virtue ethics.''
+
 
 \bibitem{illegal-to-use-firesheep}
 \BIBentryALTinterwordspacing
