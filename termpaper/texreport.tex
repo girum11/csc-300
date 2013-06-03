@@ -136,7 +136,7 @@ Session hijacking allows users of Firesheep to impersonate "logging in" as their
 Eric Butler himself argues in favor of the release of Firesheep. In his article ``Firesheep, a week later: Ethics and Legality'', Butler states outright that ``it is nobody's business telling you what software you can or cannot run on your own computer'' \cite{butler-week-later}. He defends by saying that code is a form of free speech, and that we have a Constitutional right to free speech \cite{butler-week-later}.
 
 \subsubsection{Mozilla's support of Firesheep}
-Mozilla themselves support Firesheep. Firefox (the browser for which Firesheep is an extension for) features an internal blacklist of extensions that it does not allow to work \cite{mozilla-blocklist}. Mozilla, the creators of Firefox, specifically decided not to blacklist Firesheep \cite{no-kill-switch}. Mike Beltzner, director of Firefox, praised its release: ``[Firesheep] demonstrates a security weakness in a number of popular websites, but does not exploit any vulnerability in Firefox or other Web browsers'' \cite{no-kill-switch}.
+Mozilla themselves supported Firesheep at its time of release. Firefox (the browser for which Firesheep is an extension for) features an internal blacklist of extensions that it does not allow to work \cite{mozilla-blocklist}. Mozilla, the creators of Firefox, specifically decided not to blacklist Firesheep \cite{no-kill-switch}. Mike Beltzner, director of Firefox, praised its release: ``[Firesheep] demonstrates a security weakness in a number of popular websites, but does not exploit any vulnerability in Firefox or other Web browsers'' \cite{no-kill-switch}.
 
 
 \subsection{Against Firesheep's release}
@@ -199,57 +199,74 @@ Since he contributed by ``direct participation'' to ``the design'' of a ``softwa
 
 \subsection{Argument 1: Disclosure}
 \subsubsection{SE Code 1.04}
-Disclose to \uline{appropriate persons} ... any \uline{actual or potential danger} to the \uline{user, the public} ... that they reasonably believe to be \uline{associated with software} \cite{se-code}. 
+\uline{Disclose} to appropriate persons ... any \uline{actual or potential danger} to the user, the public ... that they reasonably believe to be associated with software \cite{se-code}. 
 
-\subsubsection{Appropriate persons (to disclose to)}
-The appropriate persons to disclose this session hijacking problem to are the majority of \uline{the general public}. As I will explain later in this argument, session hijacking was a known problem to a small subset of the public, and it needed to be disclosed to a much larger audience.
+\subsubsection{Actual or potential danger}
+% First, define "danger."
+The first part of this section to be discussed is the actual or potential danger that results from session hijacking. `Actual' is defined as ``existing in act or fact'' \cite{actual}. `Potential' is defined as ``capable of being or becoming'' \cite{potential}. `Danger' is defined as ``liability or exposure to harm or injury; risk; peril'' \cite{danger}. 
 
-\subsubsection{Dangers}
-The dangers of session hijacking are simple: ``It's extremely common for websites to protect your password by encrypting the initial login, but surprisingly uncommon for websites to encrypt everything else. This leaves the cookie (and the user) vulnerable. \uline{HTTP session hijacking} (sometimes called "sidejacking") is when an attacker gets a hold of a user's cookie, allowing them to do anything the user can do on a particular website. On an open wireless network, cookies are basically shouted through the air, making these attacks extremely easy'' \cite{eric-butler}.
+The dangers of session hijacking are described by Butler: ``It's extremely common for websites to protect your password by encrypting the initial login, but surprisingly uncommon for websites to encrypt everything else. This leaves the cookie (and the user) vulnerable. HTTP session hijacking (sometimes called "sidejacking") is when an attacker gets a hold of a user's cookie, allowing them to do anything the user can do on a particular website. On an open wireless network, cookies are basically shouted through the air, making these attacks extremely easy'' \cite{eric-butler}. 
 
-\subsubsection{(Endangered) Users}
-The victims of potential session hijacking are simply any users of the affected websites (e.g. Facebook, Google) that are so unfortunate as to be physically near any session hijacking predators.
+Since Firesheep works by intercepting the ``cookies [that] are basically shouted through the air'' \cite{eric-butler}, any users who are on the same open WiFi network as Firesheep users are potential victims of the dangers associated with non-site-wide HTTPS authentication.
 
-\uline{Users logged into any one of these sites} are `affected' by these sites' inability to use site-wide HTTPS to prevent session hijacking.
+The websites affected by the dangers of HTTP session hijacking at the time of Firesheep's release included websites as large as Google, Facebook and Yahoo! \cite{firesheep-source}. Google's Google+ social network has 343 million users \cite{google-stats}, Yahoo's email service has 281 million users \cite{yahoo-stats}, and Facebook has over 1 billion users \cite{facebook-stats}. Even today, Firesheep works on sites like Stack Overflow, which over 2 million registered users at the time of writing \cite{stack-overflow-stats}.
 
-\subsubsection{Dangers associated with non-site-wide HTTPS authentication}
-Since Firesheep works by intercepting the ``cookies [that] are basically shouted through the air'' \cite{eric-butler}, any users who are on the same open WiFi network as Firesheep users are potential victims of the \uline{dangers associated with non-site-wide HTTPS authentication}.
+\subsubsection*{Potential danger: Facebook session hijacking}
+Session hijacking has several potential dangers. At the time of its release, Firesheep allowed users to perform session hijacking on social networks such as Facebook and Google+. A session hijacker would take control of your Facebook HTTP session (and thus your Facebook profile) for the duration of that session. He could post updates to your Wall, your News Feed, or your friends' News Feeds. He could delete friends from your Friends list, or worse, he could record the information of some of your more vulnerable Facebook friends to do any sort of criminal activity he wanted.	
+
+Facebook's News Feed contains timestamped location-tagged photos of your friends in it. Let's say that a session hijacker just hijacked your Facebook session while you were sitting in Starbucks. He sees that your friend John Doe just uploaded (five minutes ago) a picture of his lunch while on vacation in Miami. Two weeks before this Miami vacation, John Doe became the owner of a new dog. He uploaded a picture of this new dog -- this picture was taken two weeks ago and was geotagged at his house. The session hijacker reverse geotagged those coordinates via Google Maps and determined it to be 258 Chorro Street in California. John is still in vacation in Miami, his house in California is empty, and the stranger sitting in Starbucks hijacking your Facebook session is wondering how much of John's stuff he can haul out of John's house while John is in Miami.
+
+\subsubsection*{Potential danger: Stack Overflow session hijacking}
+Today, Facebook has correctly authenticated its entire site via HTTPS, but some websites still refuse to fix the issue. Take Stack Overflow for instance \cite{stack-exchange}. Stack Overflow's parent company Stack Exchange still refuses to authenticate their whole website with HTTPS, meaning that Firesheep still works on it today. Stack Overflow is a website for programmers with questions about programming that other programmers can answer \cite{stack-overflow-stats}. The site persists how much help you've given other people over your account's lifetime, and publicly displays how reputable you are in your posts \cite{stack-overflow-stats}. 
+
+Imagine I'm at a hackathon in San Francisco and you're an experienced programmer who also happens to be at this hackathon. We're both on the same open Wi-Fi connection here at this hackathon. We're both Stack Overflow users, but I have the reputation level of a novice, while yours boasts years of good reputation built up from always lending a helping hand. Since we're on the same open Wi-Fi network, I decide to double-click your name on Firesheep. I've just hijacked your session thanks to Stack Overflow not authenticating their website through HTTPS and now have control of your Stack Overflow account. I can do anything I want as you now. I can distribute incorrect advice to people for recreational purposes. I can allocate Stack Overflow `Bounty' to myself, rewarding my own Stack Overflow account with the good reputation that you've built up on your account. Or, if I get bored, I can just delete your account altogether. This could all potentially be done while hijacking your HTTP session via open Wi-Fi at this hackathon, and could still happen today.
+
+
+\subsubsection{Disclose}
+`Disclose' means ``to make known; reveal or uncover'' \cite{disclose}. By definition, this requires that HTTP session hijacking was (relatively speaking) an \uline{unknown} problem before the release of Firesheep.
+
+At the time of Firesheep's release, the users who were most vocal about HTTP session hijacking were in the minority \cite{firesheep-day-later}. Companies like Facebook went years without dealing with the problem, claiming that the problem simply wasn't worth the engineering hours that it would take to fix it \cite{firesheep-day-later}. Session hijacking had been brought up as an issue within the security community since 2004 \cite{firesheep-day-later}; software companies simply ignored the issue up until Firesheep's release \cite{firesheep-day-later}. Firesheep was software aimed to demonstrate (reveal) just how vulnerable websites were to HTTP session hijacking \cite{eric-butler}.
 
 \subsubsection{Substituted SE Code 1.04}
-[Eric Butler shall] Disclose to \uline{the general public} ... any \uline{session hijacking dangers} to the \uline{users} ... that they reasonably believe to be \uline{associated with non-site-wide HTTPS authentication} \cite{se-code}. 
+Disclose (\uline{demonstrate via software}) to appropriate persons ... any \uline{session hijacking danger} to the user, the public ... that they reasonably believe to be associated with software \cite{se-code}. 
 
-\subsubsection{Argument 1 Analysis}
-The release of Firesheep can be seen as a programmer's attempt to `show by doing'; Butler chose to release Firesheep as a catalyst for the seriousness of the HTTPS problem. Attempting to alleviate this HTTPS problem by popularizing session hijacking via a beautiful GUI (and thus openly catalyzing the problem) is an excellent form of danger disclosure to the general public.
+\subsubsection*{Conclusions Drawn}
 
-Session hijacking was already possible well before the release of Firesheep through software such as Wireshark \cite{wireshark}. Firesheep itself is actually just an extension of Wireshark \cite{firesheep-source}. Firesheep was so significant simply because it offers a much simpler GUI than traditional session hijacking solutions. 
 
-The `affected websites' to be spoken of at the time of release included websites as large as Google, Facebook and Yahoo! \cite{firesheep-source}. Google's Google+ social network has 343 million users \cite{google-stats}, Yahoo's email service has 281 million users \cite{yahoo-stats}, and Facebook has over 1 billion users \cite{facebook-stats}. Even today, Firesheep works on sites like Stack Overflow, which over 2 million registered users at the time of writing \cite{stack-overflow-stats}.
+Eric Butler developed Firesheep as a concrete example of how serious the HTTPS problem was: ``Today at Toorcon 12 I announced the release of Firesheep, a Firefox extension designed to demonstrate just how serious this problem is'' \cite{eric-butler}. That is to say, Firesheep was released specifically with the intent to educate the general public of the security holes many major websites had concerning non-authenticated HTTP sessions. In the blog post accompanying the release of Firesheep, Eric Butler made it very clear that he believed that non-HTTPS session hijacking was a serious problem: ``This is a widely known problem that has been talked about to death, yet very popular websites continue to fail at protecting their users'' \cite{eric-butler}.
 
-What can you do with session hijacking? At the time of its release, Firesheep worked on the social networks Facebook and Google+. I, a session hijacker, could easily take control of your Facebook session (and thus your Facebook profile) and post any changes I want to your Wall, News Feed, or friends' News Feeds. I could delete some of your friends, or what's worse, I could record the information of some of your more vulnerable Facebook friends to do any sort of criminal activity I wanted.
 
-Imagine another scenario: Facebook's News Feed contains timestamped location-tagged photos of your friends in it. I just hijacked your Facebook session, and see that your friend John Doe just took a picture five minutes ago of a sweet margarita that he's sipping with his girlfriend in Miami. John Doe also took a picture of his new dog -- this picture was taken two weeks ago and was geotagged at his house, which I looked up in a public database to be 258 Chorro Street in California. John's in Miami, his house in California is empty, and I'm the stranger sitting in Starbucks hijacking your Facebook session wondering how much of John's stuff I can lug out of his house while he's gone.
+To paraphrase SE Code 1.04: `if there's serious danger associated with some software, you're morally obligated to tell the right person what's going on' \cite{se-code}. 
 
-Today, Facebook has correctly authenticated its entire site via HTTPS, but some websites still refuse to fix the issue. Take Stack Overflow for instance \cite{stack-exchange}. Stack Overflow's parent company Stack Exchange simply doesn't want to authenticate their whole website with HTTPS, meaning that Firesheep still works just fine on it today. Stack Overflow is a website for programmers with questions about programming that other programmers can answer. It persists how much help you've given other people over your account's lifetime, and publicly displays how reputable you are in your posts. Some people take this reputation very seriously.
+The appropriate persons to disclose this session hijacking problem to are the majority of the general public. To be sure, session hijacking was a known problem to a small subset of the public, and it needed to be disclosed to a much larger audience.
 
-Imagine I'm at a hackathon in San Francisco and you're a hot-shot programmer who also happens to be at this hackathon. We're both on the same open Wi-Fi connection here at this hackathon. We're both on Stack Overflow, but my reputation level on the website is novice level, while yours boasts years of good reputation built up from always lending a helping hand. Well, we're on the same Wi-Fi network and I decide to double-click your name on Firesheep. I've just hijacked your session thanks to Stack Overflow not authenticating their website through HTTPS: I now have control of your Stack Overflow account. I can do anything I want as you now. I can ``troll'' helpless novice programmers with incorrect responses for a quick laugh. I can send a Stack Overflow `Bounty' to myself, rewarding my own, real Stack Overflow account with a ton of the good reputation that you've built up on your account. Or, if I get bored, I can just delete your account altogether. I never really liked you for winning this hackathon anyways, right?
+Session hijacking was already possible well before the release of Firesheep through software such as Wireshark \cite{wireshark}. Firesheep itself is actually just an extension of Wireshark \cite{firesheep-source}. Firesheep was so significant simply because it offers a much simpler GUI than traditional session hijacking solutions. % Prove that it really was a "simpler GUI" with factual information!
+The release of Firesheep can be seen as a programmer's attempt to `show by doing'; Butler chose to release Firesheep as a catalyst for the seriousness of the HTTPS problem. 
 
-To paraphrase SE Code 1.04: `if there's serious danger associated with some software, you're morally obligated to tell the right person what's going on' \cite{se-code}. Eric Butler developed Firesheep as a concrete example of how serious the HTTPS problem was: ``Today at Toorcon 12 I announced the release of Firesheep, a \uline{Firefox extension designed to demonstrate} just how serious this problem is'' \cite{eric-butler}. That is to say, Firesheep was released specifically with the intent to educate the general public of the security holes many major websites had concerning non-authenticated HTTP sessions. In the blog post accompanying the release of Firesheep, Eric Butler made it very clear that he believed that non-HTTPS session hijacking was a serious problem: ``This is a widely known problem that has been talked about to death, yet very popular websites continue to fail at protecting their users'' \cite{eric-butler}.
+To use Facebook as an example of how cynical companies were about the HTPPS problem: Facebook makes most of their money from  advertising revenue \cite{facebook-revenue}. It follows then that Facebook had no financial incentive to heed the warnings from the small security community (made of engineers like Butler) who were originally so vocal about the issue. With companies as large as Facebook ignoring the issue, the only way to create a change (at the time) was for the issue to come to light to the non-technical majority of the Internet's users.
 
-The problem with non-HTTPS session hijacking at the time was that the users who were most vocal about HTTPS were in the minority. Companies like Facebook went \uline{years} without dealing with the problem, claiming that the problem simply wasn't worth the engineering hours that it would take to fix it \cite{firesheep-day-later}. Session hijacking had been brought up as an issue within the security community since 2004 \cite{firesheep-day-later}. To use Facebook as an example: why would Facebook care if they make most of their revenue from the ads targeted at the other 99\% of their users? That is to say, Facebook had no financial incentive to heed the warnings from the small security community (made of engineers like Butler) who were originally so vocal about the issue. The only way for the something to change was for the issue to come to light to the other 99\% of Facebook.
-
-Therefore, Eric Butler had an ethical responsibility, by SE Code 1.04, to create and release of Firesheep to the general public in order to \uline{disclose} the dangers of session hijacking to the public.
+Therefore, Eric Butler had an ethical responsibility, by SE Code 1.04, to create and release of Firesheep to the general public in order to \uline{disclose} the \uline{dangers of session hijacking} to the public.
 
 
 % Arugment 2: 
 \subsection{Argument 2: Volunteer professional skills}
 \subsubsection{SE Code 1.08}
-Be encouraged to volunteer \uline{professional skills} to \uline{good causes} \cite{se-code}.
+Be encouraged to \uline{volunteer} \uline{professional skills} to \uline{good causes} \cite{se-code}.
+
+\subsubsection{Volunteer}
+% Define Volunteer
 
 \subsubsection{Professional skills}
+% Define Professional Skills
 \uline{Professional skills} in this case are simply the skills Eric Butler had in \uline{writing an effective, beautiful GUI for Wireshark} (the existing session hijacking software) \cite{wireshark}. 
+\subsubsection*{Effective GUI}
 
-\subsubsection{Good causes}
+\subsubsection{A Good Cause}
+% Define Good Cause
 \uline{Butler's release of Firesheep} was considered, at least from his point of view \cite{eric-butler}, a \uline{good cause}. This will be explained fully in the analysis portion of this argument.
+
+
+
 
 \subsubsection{Substituted SE Code 1.08}
 [Eric Butler should] be encouraged to volunteer \uline{his skills writing an effective GUI for Wireshark} to \uline{the good cause of preventing session hijacking}.
