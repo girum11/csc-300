@@ -227,9 +227,9 @@ To `disclose' something means ``to make known; reveal or uncover'' \cite{disclos
 
 At the time of Firesheep's release, the users who were most vocal about HTTP session hijacking were in the minority \cite{firesheep-day-later}. Companies like Facebook went years without dealing with the problem, claiming that the problem simply wasn't worth the engineering hours that it would take to fix it \cite{firesheep-day-later}. 
 
-Tools attempting to expose this HTTP session hijacking problem came and went \cite{firesheep-day-later}. ``Very little has changed after each of these tools were released. They got their media hype, and then people forgot or didn’t care. For the most part, the tools were only used by tech-savy people, hackers and geeks'' \cite{firesheep-day-later}. 
+Other tools attempting to expose this HTTP session hijacking problem came and went \cite{firesheep-day-later}. ``Very little has changed after each of these tools were released. They got their media hype, and then people forgot or didn’t care. For the most part, the tools were only used by tech-savy people, hackers and geeks'' \cite{firesheep-day-later}. 
 
-Session hijacking had been brought up as an issue within the security community since 2004 \cite{firesheep-day-later}; software companies simply ignored the issue up until Firesheep's release \cite{firesheep-day-later}. Firesheep was another software release aimed to \uline{demonstrate} (disclose) just how vulnerable websites were to HTTP session hijacking \cite{eric-butler}.
+Session hijacking had been brought up as an issue within the security community since 2004 \cite{firesheep-day-later}; software companies simply ignored the issue up until Firesheep's release \cite{firesheep-day-later}. Firesheep was another software tool aimed to \uline{demonstrate} (disclose) just how vulnerable websites were to HTTP session hijacking \cite{eric-butler}.
 
 \subsubsection{Substituted SE Code 1.04}
 Disclose (\uline{demonstrate via software}) to appropriate persons ... any \uline{session hijacking danger} to the user, the public ... that they reasonably believe to be associated with software \cite{se-code}. 
@@ -300,29 +300,33 @@ The ACM Code of Ethics therefore applies to Eric Butler as he was indeed encoura
 \subsubsection{SE Code 3.05}
 Ensure \uline{an appropriate method} is used \uline{for any project on which they work} or propose to work.
 
-\subsubsection{The Project: SSA of the HTTP Protocol}
-Butler described in his blog post accompanying Firesheep: 
+\subsubsection{The Project: Ensure Correct Usage of the HTTPS Protocol}
+Butler described in his blog post accompanying Firesheep that the goal of Firesheep (his \uline{project}) was to ``demonstrate just how serious [HTTP session hijacking] is'' \cite{eric-butler}. In particular, Butler took issue with large websites using the HTTPS protocol incorrectly: ``sites fail to protect you because after you’ve authenticated, you're issued a cookie that identifies you throughout your browsing session, but if you think about it [hijacking that cookie is] just as good as your username/password for 99\% of the time'' \cite{firesheep-day-later}. 
 
-\subsubsection*{SSA: Software Security Assurance}
+Butler also took issue with another misuse of HTTPS: ``some sites support full encryption everywhere, but don't implement it properly by failing to set the `Secure' flag on authentication cookies, negating most of the benefits and leaving users at risk'' \cite{firesheep-day-later}.
 
-\subsubsection*{The HTTP Protocol}
+Thus, Butler's primary motivation before releasing Firesheep was to assure that websites claiming to use HTTPS used it correctly to protect their users \cite{firesheep-day-later}.
 
 
 \subsubsection{An appropriate method}
 % Define "appropriate method" with respect to White Hat's philosophy on penetration testing.
+For Butler to correct websites' usage of the HTTPS protocol, he had a few choices of methods \cite{hacking-ethics}.
 
-\subsubsection*{White Hat's philosophy on SSA}
+\subsubsection*{Alternative 1: Wait for the software vendor to fix the flaw}
+The first option Butler had in trying to correct usage of HTTPS is to tell people about the issue, and wait for websites to begin posting a fix \cite{hacking-ethics}. However, security experts had been warning websites of the dangers of HTTP session hijacking for six years before the release of Firesheep \cite{firesheep-day-later}.
 
-
-The \uline{appropriate method} to solve this problem was \uline{the release of (controversial) software designed to accelerate the rate of response to HTTP session hijacking vulnerabilities}.
+\subsubsection*{Alternative 2: Expose the flaw}
+The other option Butler had to correct site usage of HTTPS was to expose the flaw \cite{hacking-ethics}. The key in staying within White Hat boundaries here is ``determining what a reasonable time period is to wait for a fix from the software company'' \cite{hacking-ethics}. Butler decided that six years was long enough \cite{eric-butler}, and that the \uline{appropriate method was to expose the flaw} \cite{firesheep-day-later}.
 
 \subsubsection{Substituted SE Code 3.05}
-Ensure an appropriate method \uline{(software designed to accelerate the rate of response to HTTP vulnerabilities)} is used \uline{to promote the well-being of the HTTP protocol as a whole}.
+Ensure an appropriate method \uline{(software designed to expose the flaws of site HTTP vulnerabilities)} is used \uline{to correct the usage of the HTTPS protocol for user safety}.
 
 \subsubsection{Conclusions drawn}
-As was stated in previous arguments in this report, HTTP session hijacking was a problem that was talked about to death among security professionals for years \cite{firesheep-day-later}. That is to say, companies have been outright ignoring this problem for (at least six \cite{firesheep-day-later}) years with no intention of changing their stance at the time of Firesheep's release. For a person in a position like Eric's it would be easy to argue that after six years of fruitless warnings, it was about time to `raise the stakes' a little and force the hands of these non-compliant software companies. If verbal signals for those six years turned out to not be an appropriate method for companies as (evidently) ignorant as this, then a `show by doing' demonstration of the gravity of the HTTP vulnerability was certainly \uline{an appropriate method}.
+The \uline{appropriate method} to solve this problem was to release of software designed to expose HTTPS usage flaws \cite{eric-butler}, and thus accelerate the rate of response to HTTP session hijacking vulnerabilities \cite{eric-butler}.
 
-Following the guidelines of SE Code section 3.05, Butler thus had no choice but to use a more appropriate method to deal with this known issue: he had to raise the stakes a little and release Firesheep to the public. Software engineers under this code have an ethical responsibility to ensure that an appropriate method is used; SE Code 3.05 is yet another perspective on why \uline{Butler was ethical} and ethically obligated to release Firesheep.
+As was stated in previous arguments in this report, HTTP session hijacking was a problem that was talked about to death among security professionals for years \cite{firesheep-day-later}. That is to say, companies had been outright ignoring this problem for (at least six \cite{firesheep-day-later}) years with no intention of changing their stance at the time of Firesheep's release. For a person in a position like Eric's it would be easy to argue that after six years of fruitless warnings, it was time to `raise the stakes' a little and force the hands of these non-compliant software companies \cite{firesheep-day-later}. If verbal signals for those six years turned out to not be an appropriate method for companies as (evidently) ignorant as this, then exposure of the gravity of the HTTP vulnerability was certainly the appropriate method to choose.
+
+Following the guidelines of SE Code section 3.05, Butler thus had no choice but to use a more appropriate method to deal with this known issue \cite{se-code}: he had to raise the stakes a little and release Firesheep to the public \cite{hacking-ethics}. Software engineers under this code have an ethical responsibility to ensure that an appropriate method is used \cite{hacking-ethics}; SE Code 3.05 is yet another perspective on why \uline{Butler was ethical} and ethically obligated to release Firesheep \cite{se-code}.
 
 
 
@@ -352,7 +356,7 @@ Following the guidelines of SE Code section 3.05, Butler thus had no choice but 
 \section{Conclusion}
 A common theme throughout this discussion has been Eric Butler's ethical responsibility to do \uline{something} about the rampant HTTP session hijacking vulnerability among popular websites. It was, as Eric said, a problem that was talked about to death \cite{eric-butler}. Yet, very few software companies were willing to spend the engineering hours fixing it until Butler trivialized the session hijacking process \cite{firesheep-day-later}. The Code of Ethics describes situations like this in sections 1.04, 1.08, 6.08 and 1.05 \cite{se-code}, and the Code  states that Butler had a moral responsibility to do something about it. His release of Firesheep was  ethical.
 
-Software engineers in similar positions should consider the approach Butler used in garnering attention towards an issue: let your code speak. If software is the cause of some major danger to people, software is also likely to be a solution to said danger. This was especially true in Butler's case, and can be true for many software engineers who are in a position to do something morally sound according to the Code of Ethics. To paraphrase section 1.04 once again: ``if you see some danger associated with some software, \uline{do something} about it'' \cite{se-code}.
+Software engineers in similar positions should consider the approach Butler used in garnering attention towards an issue: let your code speak. If software is the cause of some major danger to people, software is also likely to be a solution to said danger. This was especially true in Butler's case, and can be true for many software engineers who are in a position to do something morally sound according to the Code of Ethics. To paraphrase section 1.04 once again: ``if you see some danger associated with some software, \uline{disclose the danger}'' \cite{se-code}.
 
 
 %end the two column format
