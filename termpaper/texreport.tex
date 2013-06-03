@@ -17,7 +17,7 @@
 
 \begin{document}
 
-\title{\vfill Term Paper: Firesheep} %\vfill gives us the black space at the top of the page
+\title{\vfill Firesheep: Disclosing Dangers} %\vfill gives us the black space at the top of the page
 \author{
 By Girum Ibssa\vspace{10pt} \\
 CSC 300: Professional Responsibilities\vspace{10pt} \\
@@ -212,20 +212,24 @@ Since Firesheep works by intercepting the ``cookies [that] are basically shouted
 The websites affected by the dangers of HTTP session hijacking at the time of Firesheep's release included websites as large as Google, Facebook and Yahoo! \cite{firesheep-source}. Google's Google+ social network has 343 million users \cite{google-stats}, Yahoo's email service has 281 million users \cite{yahoo-stats}, and Facebook has over 1 billion users \cite{facebook-stats}. Even today, Firesheep works on sites like Stack Overflow, which over 2 million registered users at the time of writing \cite{stack-overflow-stats}.
 
 \subsubsection*{Potential danger: Facebook session hijacking}
-Session hijacking has several potential dangers. At the time of its release, Firesheep allowed users to perform session hijacking on social networks such as Facebook and Google+. A session hijacker would take control of your Facebook HTTP session (and thus your Facebook profile) for the duration of that session. He could post updates to your Wall, your News Feed, or your friends' News Feeds. He could delete friends from your Friends list, or worse, he could record the information of some of your more vulnerable Facebook friends to do any sort of criminal activity he wanted.	
+Session hijacking has several potential dangers \cite{eric-butler}. At the time of its release, Firesheep allowed users to perform session hijacking on social networks such as Facebook and Google+ \cite{eric-butler}. A session hijacker would take control of your Facebook HTTP session (and thus your Facebook profile) for the duration of that session \cite{eric-butler}. He could post updates to your Wall, your News Feed, or your friends' News Feeds. He could delete friends from your Friends list, or worse, he could record the information of some of your more vulnerable Facebook friends to do any sort of criminal activity he wanted.	
 
-Facebook's News Feed contains timestamped location-tagged photos of your friends in it. Let's say that a session hijacker just hijacked your Facebook session while you were sitting in Starbucks. He sees that your friend John Doe just uploaded (five minutes ago) a picture of his lunch while on vacation in Miami. Two weeks before this Miami vacation, John Doe became the owner of a new dog. He uploaded a picture of this new dog -- this picture was taken two weeks ago and was geotagged at his house. The session hijacker reverse geotagged those coordinates via Google Maps and determined it to be 258 Chorro Street in California. John is still in vacation in Miami, his house in California is empty, and the stranger sitting in Starbucks hijacking your Facebook session is wondering how much of John's stuff he can haul out of John's house while John is in Miami.
+Facebook's News Feed contains timestamped location-tagged photos of your friends in it \cite{facebook-geotag}. Let's say that a session hijacker just hijacked your Facebook session while you were sitting in Starbucks. He sees that your friend John Doe just uploaded (five minutes ago) a picture of his lunch while on vacation in Miami \cite{facebook-geotag}. Two weeks before this Miami vacation, John Doe became the owner of a new dog. He uploaded a picture of this new dog -- this picture was taken two weeks ago and was geotagged at his house \cite{facebook-geotag}. The session hijacker reverse geocodes those coordinates via Google Maps \cite{reverse-geocoding} and determined it to be 258 Chorro Street in California. John is still in vacation in Miami \cite{facebook-geotag}, his house in California is empty \cite{reverse-geocoding}, and the stranger sitting in Starbucks hijacking your Facebook session \cite{eric-butler} is wondering how much of John's stuff he can haul out of John's house while John is in Miami.
 
 \subsubsection*{Potential danger: Stack Overflow session hijacking}
 Today, Facebook has correctly authenticated its entire site via HTTPS, but some websites still refuse to fix the issue. Take Stack Overflow for instance \cite{stack-exchange}. Stack Overflow's parent company Stack Exchange still refuses to authenticate their whole website with HTTPS, meaning that Firesheep still works on it today. Stack Overflow is a website for programmers with questions about programming that other programmers can answer \cite{stack-overflow-stats}. The site persists how much help you've given other people over your account's lifetime, and publicly displays how reputable you are in your posts \cite{stack-overflow-stats}. 
 
-Imagine I'm at a hackathon in San Francisco and you're an experienced programmer who also happens to be at this hackathon. We're both on the same open Wi-Fi connection here at this hackathon. We're both Stack Overflow users, but I have the reputation level of a novice, while yours boasts years of good reputation built up from always lending a helping hand. Since we're on the same open Wi-Fi network, I decide to double-click your name on Firesheep. I've just hijacked your session thanks to Stack Overflow not authenticating their website through HTTPS and now have control of your Stack Overflow account. I can do anything I want as you now. I can distribute incorrect advice to people for recreational purposes. I can allocate Stack Overflow `Bounty' to myself, rewarding my own Stack Overflow account with the good reputation that you've built up on your account. Or, if I get bored, I can just delete your account altogether. This could all potentially be done while hijacking your HTTP session via open Wi-Fi at this hackathon, and could still happen today.
+Imagine I'm at a hackathon in San Francisco \cite{angelhack} and you're an experienced programmer who also happens to be at this hackathon. We're both on the same open Wi-Fi connection here at this hackathon. We're both Stack Overflow users, but I have the reputation level of a novice, while yours boasts years of good reputation built up from always lending a helping hand. Since we're on the same open Wi-Fi network, I decide to double-click your name on Firesheep \cite{eric-butler}. I've just hijacked your session \cite{eric-butler} thanks to Stack Overflow not authenticating their website through HTTPS \cite{stack-exchange} and now have control of your Stack Overflow account \cite{stack-overflow-stats}. I can do anything I want as you now \cite{eric-butler}. I can distribute incorrect advice to people for recreational purposes \cite{stack-overflow-stats}. I can allocate Stack Overflow `Bounty' to myself \cite{stack-overflow-stats}, rewarding my own Stack Overflow account with the good reputation that you've built up on your account \cite{stack-overflow-stats}. Or, if I get bored, I can just delete your account altogether \cite{stack-overflow-stats}. This could all potentially be done while hijacking your HTTP session via open Wi-Fi at this hackathon, and could still happen today \cite{stack-exchange}.
 
 
 \subsubsection{Disclose}
-`Disclose' means ``to make known; reveal or uncover'' \cite{disclose}. By definition, this requires that HTTP session hijacking was (relatively speaking) an \uline{unknown} problem before the release of Firesheep.
+To `disclose' something means ``to make known; reveal or uncover'' \cite{disclose}. By definition, this requires that HTTP session hijacking was (relatively speaking) an \uline{unknown} problem before the release of Firesheep.
 
-At the time of Firesheep's release, the users who were most vocal about HTTP session hijacking were in the minority \cite{firesheep-day-later}. Companies like Facebook went years without dealing with the problem, claiming that the problem simply wasn't worth the engineering hours that it would take to fix it \cite{firesheep-day-later}. Session hijacking had been brought up as an issue within the security community since 2004 \cite{firesheep-day-later}; software companies simply ignored the issue up until Firesheep's release \cite{firesheep-day-later}. Firesheep was software aimed to demonstrate (reveal) just how vulnerable websites were to HTTP session hijacking \cite{eric-butler}.
+At the time of Firesheep's release, the users who were most vocal about HTTP session hijacking were in the minority \cite{firesheep-day-later}. Companies like Facebook went years without dealing with the problem, claiming that the problem simply wasn't worth the engineering hours that it would take to fix it \cite{firesheep-day-later}. 
+
+Tools attempting to expose this HTTP session hijacking problem came and went \cite{firesheep-day-later}. ``Very little has changed after each of these tools were released. They got their media hype, and then people forgot or didn’t care. For the most part, the tools were only used by tech-savy people, hackers and geeks'' \cite{firesheep-day-later}. 
+
+Session hijacking had been brought up as an issue within the security community since 2004 \cite{firesheep-day-later}; software companies simply ignored the issue up until Firesheep's release \cite{firesheep-day-later}. Firesheep was another software release aimed to \uline{demonstrate} (disclose) just how vulnerable websites were to HTTP session hijacking \cite{eric-butler}.
 
 \subsubsection{Substituted SE Code 1.04}
 Disclose (\uline{demonstrate via software}) to appropriate persons ... any \uline{session hijacking danger} to the user, the public ... that they reasonably believe to be associated with software \cite{se-code}. 
@@ -254,54 +258,68 @@ Therefore, Eric Butler had an ethical responsibility, by SE Code 1.04, to create
 Be encouraged to \uline{volunteer} \uline{professional skills} to \uline{good causes} \cite{se-code}.
 
 \subsubsection{Volunteer}
-% Define Volunteer
+To `volunteer' something means ``to offer oneself or one's services for some undertaking or purpose'' \cite{volunteer}. Eric Butler wrote Firesheep in his spare time and without pay \cite{eric-butler}, thus offering his services to the community for free. He also open sourced to the public, allowing others extend it by writing their own handlers for it \cite{eric-butler}. His \uline{purpose} for writing Firesheep, as documented in its source code, was to demonstrate HTTP session hijacking vulnerabilities \cite{firesheep-source}.
 
 \subsubsection{Professional skills}
-% Define Professional Skills
-\uline{Professional skills} in this case are simply the skills Eric Butler had in \uline{writing an effective, beautiful GUI for Wireshark} (the existing session hijacking software) \cite{wireshark}. 
-\subsubsection*{Effective GUI}
+A `professional' is ``a person who is expert at his or her work'' \cite{professional}. `Skills' are ``the ability, coming from one's knowledge, practice, aptitude, etc., to do something well'' \cite{skills}. 
+
+The professional skills, in this case, are the skills Eric Butler used to \uline{write an effective GUI} for Wireshark (the existing session hijacking software) \cite{wireshark}. 
+
+\subsubsection*{An Effective GUI}
+% Define an effective GUI using factual data.
+Butler states ``Firesheep is doing the exact same thing as these other tools [Wireshark], but with a simpler user interface... Because of its simplicity, Firesheep has already succeeded in demonstrating the risks of insecure websites to a much wider audience than any previous tool, in a single day'' \cite{firesheep-day-later}. 
+
+He backs this claim with numbers: ``Since being released just over a day ago, Firesheep has been downloaded over 129,000 times. Firesheep has consistently been one (if not more) of the `Top Tweets' on Twitter, on top of Hacker News, was at one point the \#10 trending search on Google in the US, and is the second suggestion on Bing when you start typing “fire”. Firesheep has been mentioned on countless blogs and news sites in numerous languages, and has received almost universal praise'' \cite{firesheep-day-later}.
+
+\subsubsection*{Results of Butler's professional skills}
+Qualified software hackers used software like Wireshark before the existence of Firesheep \cite{wireshark}. Butler provided his professional skills by integrating Wireshark within Firefox and writing it to be mostly autonomous \cite{eric-butler}. What was once a process reserved for only the most expert of software crackers accustomed to software like Wireshark \cite{wireshark} became a one-click `buddy-list' for session hijackers to choose their victims from \cite{eric-butler}. Overnight, Wireshark turned into Firesheep, with its 129,000 users and multitude of media coverage \cite{firesheep-day-later}.
 
 \subsubsection{A Good Cause}
-% Define Good Cause
-\uline{Butler's release of Firesheep} was considered, at least from his point of view \cite{eric-butler}, a \uline{good cause}. This will be explained fully in the analysis portion of this argument.
+``\uline{Good cause} is a legal term denoting adequate or \uline{substantial grounds} ... \uline{to take a certain action}, or to fail to take an action prescribed by law. What constitutes a good cause is usually determined on a case by case basis and is thus relative'' \cite{good-cause}.
 
-
-
+\subsubsection*{Substantial grounds to take a certain action}
+`Good cause', by definition, is calculated on a case by case basis. In the case of Firesheep, Eric Butler believed (and wrote in the release notes of Firesheep) that the actual and potential dangers of HTTP session hijacking compelled him to create and release Firesheep \cite{eric-butler}. The objective evidence of HTTP session hijacking indeed having dangers is presented in Argument 1 of this report. 
 
 \subsubsection{Substituted SE Code 1.08}
-[Eric Butler should] be encouraged to volunteer \uline{his skills writing an effective GUI for Wireshark} to \uline{the good cause of preventing session hijacking}.
+[Eric Butler is] encouraged to \uline{volunteer} \uline{his skills writing an effective GUI for Wireshark} to \uline{the good cause of preventing session hijacking}.
 
-\subsubsection{Argument 2 Analysis}
-% TODO: Each one of these paragraphs have been yanked from the subsections above. Iterate on top of these for a few paragraphs to get this Analysis section up to 1 page.
-Any qualified software cracker could have used Wireshark before; Butler simply provided his professional skills by integrating Wireshark right into Firefox and writing it to be mostly autonomous. What was once a process reserved for only the most expert of software crackers accustomed to software like Wireshark became a one-click `buddy-list' for session hijackers to choose their victims from \cite{eric-butler}. Overnight, Wireshark turned into Firesheep. Firesheep gained 129,000 users in those 24 hours, garnering many ``Top Tweets'' on Twitter and turning into the \#10 most searched Google query in the United States \cite{firesheep-day-later}. Butler's professional skills turning Wireshark into Firesheep are certainly impressive in their own right.
-
-But was it a `good cause'? In its simplest, Butler forcing the hand of the websites responsible for HTTPS session hijacking vulnerability to fix their security flaw should be interpreted as `good cause' because the resulting HTTPS fix entirely \uline{eliminates} potential future session hijackings from occurring. 
+\subsubsection{Conclusions drawn}
+Butler forcing the hand of the websites responsible for HTTP session hijacking vulnerability to fix their security flaw should be interpreted as `good cause': the resulting HTTPS fix eliminates potential session hijackings from occurring on that website \cite{eric-butler}.
 
 Prior to Firesheep, popular websites were rampantly vulnerable to session hijacking at the time of Firesheep's release \cite{firesheep-source}. The list of vulnerable websites is listed in Section 1.1, and included sites as popular as Google and Facebook. Additionally, ``the risks of insecure websites have been known for years, yet little has been done about what has become an increasingly widespread problem'' \cite{butler-fallout}. 
 
 Victims of session hijacking ultimately have their `happiness' taken from them in exchange for the happiness of the culprit. \uline{Preventing the session hijacking} altogether results in a net gain in happiness of the society and is thus a \uline{good cause}, according to utilitarian ethics \cite{virtue-ethics}. 
 
-Put differently: the release of Firesheep quickly led to the security fix that was so desperately needed in the industry. There was certainly an overhead societal cost of having Firesheep run rampant in the weeks it took for websites to fix this flaw (see Argument 1's analysis). This overhead would have resulted in a net loss in happiness to the general public. However, the overall result of Firesheep was that non-HTTPS session hijacking mostly became a thing of the past. The disappearance of session hijacking as a problem results in net happiness to the general public, and that net positive result accumulates for every year that session hijacking is \uline{not} the problem it was from 2004-2010 \cite{firesheep-day-later}.
+Put differently: the release of Firesheep quickly led to the security fix that was so desperately needed in the industry. There was an overhead cost to society of having Firesheep run rampant in the weeks it took for websites to fix this flaw (see Argument 1's analysis). This overhead resulted in a brief loss in happiness to the general public. However, the overall result of Firesheep was that non-HTTPS session hijacking mostly became a thing of the past. The fix of session hijacking resulted in the removal of the dangers of session hijacking to society, and in turn resulted in an increase in  net happiness to the general public. That net positive result accumulates for every year that session hijacking is \uline{not} the problem it was from 2004-2010 \cite{firesheep-day-later}.
 
-The ACM Code of Ethics therefore applies to Eric Butler as he was indeed encouraged to volunteer his GUI skills to this good cause. Similar to Argument 1, the rampancy of vulnerable HTTP websites at the time essentially necessitated Butler's intervention by releasing the Firefox GUI over Wireshark. By this logic, Butler was not only ethical in releasing Firesheep to the general public, but was entirely encouraged to do so on a basis of the utilitarian aspects of the Code of Ethics, Section 1.08.
+The ACM Code of Ethics therefore applies to Eric Butler as he was indeed encouraged to \uline{volunteer} his \uline{GUI skills} to this \uline{good cause}. Similar to Argument 1, the rampancy of vulnerable HTTP websites at the time essentially necessitated Butler's intervention by releasing the Firesheep GUI on top of Wireshark. By this logic, Butler was not only ethical in releasing Firesheep to the general public, but was encouraged to do so on a basis of the utilitarian aspects of the Code of Ethics, Section 1.08.
 
 % Argument 3:
-
-% TODO: Use SE Code 3.05 as your third and final Argument: "Use an appropriate method." That is, companies have been ignoring this problem for years, and that the only way to actually help out at this point was to raise the stakes a little -- Firesheep was therefore a very appropriate method to use.
+% The METHOD that he used, don't assume that he used an appropriate method. First, define an "appropriate method." For the "accelerate the response" part, be sure to quote that he was doing it for that purpose. As far as "appropriate methods", be sure to list the alternatives that Butler has by proving it with citations. E.g., White Hat will sometimes tell companies about a security defect that they have, and then gives them two weeks to fix it. If they fail to do it, White Hat releases an exploit for the software. Look up CERT for principles on the alternatives.
 \subsection{Argument 3: Ensure an appropriate method}
 \subsubsection{SE Code 3.05}
 Ensure \uline{an appropriate method} is used \uline{for any project on which they work} or propose to work.
 
-\subsubsection{An appropriate method}
-The \uline{appropriate method} to solve this problem was \uline{the release of (controversial) software designed to accelerate the rate of response to HTTP session hijacking vulnerabilities}.
+\subsubsection{The Project: SSA of the HTTP Protocol}
+Butler described in his blog post accompanying Firesheep: 
 
-\subsubsection{(Software) Project}
-The \uline{project} Butler was working on here was essentially \uline{the well-being of the HTTP protocol} as a whole. If not that, then the `project' was at least this particular vulnerability of the protocol.
+\subsubsection*{SSA: Software Security Assurance}
+
+\subsubsection*{The HTTP Protocol}
+
+
+\subsubsection{An appropriate method}
+% Define "appropriate method" with respect to White Hat's philosophy on penetration testing.
+
+\subsubsection*{White Hat's philosophy on SSA}
+
+
+The \uline{appropriate method} to solve this problem was \uline{the release of (controversial) software designed to accelerate the rate of response to HTTP session hijacking vulnerabilities}.
 
 \subsubsection{Substituted SE Code 3.05}
 Ensure an appropriate method \uline{(software designed to accelerate the rate of response to HTTP vulnerabilities)} is used \uline{to promote the well-being of the HTTP protocol as a whole}.
 
-\subsubsection{Argument 3 Analysis}
+\subsubsection{Conclusions drawn}
 As was stated in previous arguments in this report, HTTP session hijacking was a problem that was talked about to death among security professionals for years \cite{firesheep-day-later}. That is to say, companies have been outright ignoring this problem for (at least six \cite{firesheep-day-later}) years with no intention of changing their stance at the time of Firesheep's release. For a person in a position like Eric's it would be easy to argue that after six years of fruitless warnings, it was about time to `raise the stakes' a little and force the hands of these non-compliant software companies. If verbal signals for those six years turned out to not be an appropriate method for companies as (evidently) ignorant as this, then a `show by doing' demonstration of the gravity of the HTTP vulnerability was certainly \uline{an appropriate method}.
 
 Following the guidelines of SE Code section 3.05, Butler thus had no choice but to use a more appropriate method to deal with this known issue: he had to raise the stakes a little and release Firesheep to the public. Software engineers under this code have an ethical responsibility to ensure that an appropriate method is used; SE Code 3.05 is yet another perspective on why \uline{Butler was ethical} and ethically obligated to release Firesheep.
@@ -332,9 +350,9 @@ Following the guidelines of SE Code section 3.05, Butler thus had no choice but 
 %\section{Conclusion}
 %The conclusion is a summary of your entire analysis. It should reiterate the answer your audience has been forming while reading your analysis. New information should never be introduced in your conclusion. \cite{texTemp}
 \section{Conclusion}
-A common theme throughout this discussion has been Eric Butler's ethical responsibility to do \uline{something} about the rampant vulnerability that websites had to session hijacking. It was, like Eric said, a problem that was talked about to death. Yet, very few software companies were willing to spend the engineering hours fixing it until Butler trivialized the session hijacking process. The Code of Ethics describes situations like this in sections 1.04, 1.08, 6.08 and 1.05 \cite{se-code}, and the Code  states that Butler had a moral responsibility to do something about it. His release of Firesheep was  ethical.
+A common theme throughout this discussion has been Eric Butler's ethical responsibility to do \uline{something} about the rampant HTTP session hijacking vulnerability among popular websites. It was, as Eric said, a problem that was talked about to death \cite{eric-butler}. Yet, very few software companies were willing to spend the engineering hours fixing it until Butler trivialized the session hijacking process \cite{firesheep-day-later}. The Code of Ethics describes situations like this in sections 1.04, 1.08, 6.08 and 1.05 \cite{se-code}, and the Code  states that Butler had a moral responsibility to do something about it. His release of Firesheep was  ethical.
 
-Software engineers in similar positions should consider the approach Butler used in garnering attention towards an issue: let your code speak. If some piece of software is the cause of some major danger to people, software is also likely to be a solution to said danger. This was especially true in Butler's case, and can be true for many software engineers who are in a position to do something morally sound according to the Code of Ethics. To paraphrase section 1.04 once again: ``if you see some danger associated with some software, \uline{do something} about it'' \cite{se-code}.
+Software engineers in similar positions should consider the approach Butler used in garnering attention towards an issue: let your code speak. If software is the cause of some major danger to people, software is also likely to be a solution to said danger. This was especially true in Butler's case, and can be true for many software engineers who are in a position to do something morally sound according to the Code of Ethics. To paraphrase section 1.04 once again: ``if you see some danger associated with some software, \uline{do something} about it'' \cite{se-code}.
 
 
 %end the two column format
